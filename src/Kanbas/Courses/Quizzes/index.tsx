@@ -8,6 +8,7 @@ import { setQuizzes, deleteQuiz, updateQuiz } from "./reducer";
 import { formatDate } from "../Assignments/DateFormat";
 import * as client from "./client";
 import { SiStarship } from 'react-icons/si';
+import { MdDoNotDisturb } from "react-icons/md";
 
 
 function QuizAvailable(props: any) {
@@ -149,7 +150,9 @@ export default function Quizzes() {
                                         {quiz.published ? (
                                             <FaCheckCircle className="me-2 text-success" style={{ fontSize: '24px' }} />
                                         ) : (
-                                            <FaCheckCircle className="me-2" style={{ fontSize: '24px', color: '#999999' }} />
+                                            <button type="button" onClick={() => handleChangePublishValue(quiz, true)}>
+                                                <MdDoNotDisturb className="me-2 text-danger" style={{ fontSize: '24px' }} />
+                                            </button>
                                         )}
                                         <div onClick={() => handleMenu(quiz._id)}>
                                             <FaEllipsisVertical style={{ fontSize: '24px' }} />
