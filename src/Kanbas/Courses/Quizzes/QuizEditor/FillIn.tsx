@@ -5,7 +5,7 @@ import { FaPlus } from "react-icons/fa";
 import { Editor } from "@tinymce/tinymce-react";
 
 export default function FillIn() {
-    const WYSIWYG_API = process.env.REACT_APP_WYSIWYG_API;
+    const WYSIWYG_API = "lehjg5nxnh8e02b41ilh2zzu238vk5qtaklwma38tvtmifuo";
     const dispatch = useDispatch();
     const question = useSelector((state: any) => state.quizzesReducer.question);
 

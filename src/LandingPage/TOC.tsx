@@ -10,7 +10,7 @@ export default function TOC() {
             </li>
             <li className="nav-item">
                 <a id="wd-k" href="https://github.com/Divyadharsh/kanbas_project_team3_frontend.git" className="nav-link">
-                    Team GitHub
+                    Team GitHub 
                 </a>
             </li>
         </ul>

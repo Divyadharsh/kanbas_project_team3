@@ -5,16 +5,16 @@ import { useEffect, useState } from "react";
 import { setQuiz, updateQuiz, deleteQuiz } from "../reducer";
 import Select from 'react-select'
 import { parseDateString } from "../../Assignments/parseDateString";
-//import { Editor } from "@tinymce/tinymce-react";
+import { Editor } from "@tinymce/tinymce-react";
 
 
 export default function DetailsEditor() {
-    const WYSIWYG_API = process.env.REACT_APP_WYSIWYG_API;
+    const WYSIWYG_API = "lehjg5nxnh8e02b41ilh2zzu238vk5qtaklwma38tvtmifuo";
     const dispatch = useDispatch();
     const { cid, qid } = useParams();
     const navigate = useNavigate();
     const quiz = useSelector((state: any) => state.quizzesReducer.quiz);
-
+   console.log("key", WYSIWYG_API)
 
     useEffect(() => {
         if (qid) {
@@ -64,8 +64,7 @@ export default function DetailsEditor() {
             Details
             <input value={quiz.name} className="form-control mb-2" onChange={(e) => dispatch(setQuiz({ ...quiz, name: e.target.value }))} />
             <p>Quiz Instructions:</p>
-            {/* 
-            Error: tinymce can only be initialised when in a document
+       
             <Editor
                 apiKey={WYSIWYG_API}
                 value={quiz.description}
@@ -87,21 +86,23 @@ export default function DetailsEditor() {
                         'removeformat | help',
                     content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
                 }}
-            /> */}
-
-            <div className="row mb-3 ms-1">
-                <textarea
+   
+            />
+             {/* <div className="row mb-3 ms-1">
+               <textarea
                     id="assignmentDescription"
                     className="form-control mb-2"
-                    cols={10}
-                    value={quiz.description}
-                    onChange={(e) =>
-                        dispatch(setQuiz({ ...quiz, description: e.target.value }))
+                     cols={10}
+                     value={quiz.description}
+                 onChange={(e) =>
+                     dispatch(setQuiz({ ...quiz, description: e.target.value }))
 
-                    }
-                />
-            </div>
+                 }
+             />
+         </div> */}
             <br /> 
+
+            
             <div>
                 <div className="row">
                     <div className="col-3 text-end"><p>Quiz Type</p></div>
