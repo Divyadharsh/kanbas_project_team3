@@ -23,7 +23,40 @@ export default function Profile() {
         navigate("/Kanbas/Account/Signin");
     };
 
+
+    const saveProfile = async() => {
+        const currentUser = {...profile}
+         await client.updateUser(currentUser);
+        dispatch(setCurrentUser(currentUser));
+        alert("Profile Saved!")
+    }
+
+
+
+
+    // const handleSave = () => {
+    //     const currentAssignment = { ...assignment }; 
+    //     if (currentAssignment._id) {
+    //         // Existing assignment
+    //         client.updateAssignment(currentAssignment).then((updatedAssignment) => {
+    //             dispatch(updateAssignment(updatedAssignment));
+    //             navigate(`/Kanbas/Courses/${cid}/Assignments`);
+    //         }).catch(err => setError(err.response.data));
+    //     } else {
+    //         // New assignment, assign a unique _id
+    //         client.createAssignment(cid, currentAssignment).then((newAssignment) => {
+    //             dispatch(addAssignment(newAssignment));
+    //             navigate(`/Kanbas/Courses/${cid}/Assignments`);
+    //         }).catch(err => setError(err.response.data));
+    //     }
+    // };
+
+
+
     useEffect(() => { fetchProfile(); }, []);
+
+
+    console.log("profile is", profile)
     return (
         <div className="container mt-4">
             <h1>Profile</h1>
@@ -94,9 +127,15 @@ export default function Profile() {
                             <option value="STUDENT">Student</option>
                         </select>
                     </div>
-                    <button onClick={signout} className="btn btn-danger w-100">
+                    <div className="col">
+                    <button onClick={saveProfile} className="btn btn-success me-2">
+                        Save
+                    </button>
+
+                    <button onClick={signout} className="btn btn-danger ">
                         Sign out
                     </button>
+                    </div>
                 </div>
             )}
         </div>

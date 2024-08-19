@@ -151,7 +151,7 @@ export default function Quizzes() {
                                             <FaCheckCircle className="me-2 text-success" style={{ fontSize: '24px' }} />
                                         ) : (
                                             <button type="button" onClick={() => handleChangePublishValue(quiz, true)}>
-                                            <MdDoNotDisturb className="me-2 text-danger" style={{ fontSize: '24px' }} />
+                                            <MdDoNotDisturb className="text-danger" style={{ fontSize: '24px' }} />
                                         </button>
 )}
                                         <div onClick={() => handleMenu(quiz._id)}>

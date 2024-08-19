@@ -66,11 +66,10 @@ export default function Dashboard({
                     }
                 </div> : null
             }
-            <hr />
+      
 
             <h2 id="wd-dashboard-published"> Courses ({courses.length})</h2>
 
-            <hr />
             <div id="wd-dashboard-courses" className="row">
                 <div className="row row-cols-1 row-cols-md-5 g-4">
                     {courses.filter(course => course !== null).map((course) => (

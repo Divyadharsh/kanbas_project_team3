@@ -42,9 +42,15 @@ export default function QuizEditor() {
             </div>
             <hr />
             <Nav>
-                <NavItem className={`nav-link ${currentTab === "Details" ? "active" : "text-danger"}`} onClick={() => setCurrentTab("Details")}>Details</NavItem>
-                <NavItem className={`nav-link ${currentTab === "Questions" ? "active" : "text-danger"}`} onClick={() => setCurrentTab("Questions")}>Questions</NavItem>
+                <button className = "btn me-2  boarder btn-lg">
+                <NavItem className={`nav-link  ${currentTab === "Details" ? "active" : "text-danger boarder"}`} onClick={() => setCurrentTab("Details")}>Details</NavItem>
+                </button>
+                <button className = "btn me-2 boarder btn-lg"  >
+                <NavItem className={`nav-link  ${currentTab === "Questions" ? "active" : "text-danger boarder"}`} onClick={() => setCurrentTab("Questions")}>Questions</NavItem>
+                </button>
             </Nav>
+            <br/>
+            <br/>
             {currentTab === "Details" ? <DetailsEditor /> : <QuestionsEditor />}
         </div>
     );

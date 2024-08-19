@@ -64,7 +64,7 @@ export default function PeopleTable() {
             <table className="table table-striped">
                 <thead>
                     <tr>
-                        <th>Name</th><th>Login ID</th><th>Section</th><th>Role</th><th>Last Activity</th><th>Total Activity</th>
+                        <th>Name</th><th>Username</th><th>Section</th><th>Role</th><th>Last Activity</th><th>Total Activity</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -78,7 +78,7 @@ export default function PeopleTable() {
                                     <FaUserCircle /> {user.firstName} {user.lastName}
                                 </Link>
                             </td>
-                            <td>{user.loginId}</td><td>{user.section}</td><td>{user.role}</td><td>{user.lastActivity}</td>
+                            <td>{user.username}</td><td>{user.section}</td><td>{user.role}</td><td>{user.lastActivity}</td>
                             <td>{user.totalActivity}</td>
                         </tr>
                     ))}
