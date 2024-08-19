@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { setQuiz, updateQuiz, deleteQuiz } from "../reducer";
 import Select from 'react-select'
 import { parseDateString } from "../../Assignments/parseDateString";
-import { Editor } from "@tinymce/tinymce-react";
+//import { Editor } from "@tinymce/tinymce-react";
 
 
 export default function DetailsEditor() {
@@ -65,7 +65,7 @@ export default function DetailsEditor() {
             <input value={quiz.name} className="form-control mb-2" onChange={(e) => dispatch(setQuiz({ ...quiz, name: e.target.value }))} />
             <p>Quiz Instructions:</p>
        
-            <Editor
+            {/* <Editor
                 apiKey={WYSIWYG_API}
                 value={quiz.description}
                 onEditorChange={(newDescription, editor) => {
@@ -86,9 +86,8 @@ export default function DetailsEditor() {
                         'removeformat | help',
                     content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
                 }}
-   
-            />
-             {/* <div className="row mb-3 ms-1">
+            /> */}
+             <div className="row mb-3 ms-1">
                <textarea
                     id="assignmentDescription"
                     className="form-control mb-2"
@@ -99,7 +98,7 @@ export default function DetailsEditor() {
 
                  }
              />
-         </div> */}
+         </div> 
             <br /> 
 
             
